@@ -1,61 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f6f9;
+}
+
+/* Mejora de accesibilidad: verde más oscuro unificado para asegurar contraste AAA en toda la página */
+.bg-success, .btn-success, .footer-custom {
+    background-color: #0a3622 !important; /* Verde casi negro */
+    color: #ffffff !important;
+}
+
+.btn-success {
+    border-color: #0a3622 !important;
+}
+
+.btn-success:hover, .btn-success:focus {
+    background-color: #072517 !important;
+    border-color: #072517 !important;
+}
+
+/* Forzar contraste en los enlaces de navegación y footer */
+.bg-success .nav-link,
+.bg-success .navbar-brand,
+.footer-custom p, 
+.footer-custom h3, 
+.footer-custom a, 
+.footer-custom strong, 
+.footer-custom i {
+    color: #ffffff !important;
+}
+
 .imagenTest {
     height: 1000px;
     width: 100px;
     background-color: powderblue;
-  }
+}
 
-  .logo{
-    margin-top:30px;
-      margin: 5px;
+.logo{
+    margin: 5px;
     border-radius: 8px;
-    background-color: powderblue;
-  }
+    background-color: white; /* Mejor contraste */
+    padding: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
 
 .imagenChava{
-    height: 300px;
-    width: 300px;
-    background-color: powderblue;
+    height: 250px;
+    width: 250px;
+    object-fit: cover; /* Para que la imagen no se deforme al ser circular */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
     display:block;
-    margin:auto;
-  }
+    margin: 20px auto;
+}
 
 .imagenRandom{
-    border-radius: 8px;
-    
+    border-radius: 12px;
     width: 100%;
     height: auto;
-    background-color: powderblue;
-  }
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    margin-bottomelement: 15px;
+}
 
-  .justifyText{ text-align : justify; }
+.justifyText{ 
+    text-align: justify; 
+    color: #555;
+    line-height: 1.7;
+}
 
-  /* GALERY */
+/* GALLERY */
 
-  .gallery {
+.gallery {
     -webkit-column-count: 3;
     -moz-column-count: 3;
     column-count: 3;
-    -webkit-column-width: 33%;
-    -moz-column-width: 33%;
-    column-width: 33%; }
-    .gallery .pics {
+    -webkit-column-gap: 1.5rem;
+    -moz-column-gap: 1.5rem;
+    column-gap: 1.5rem;
+    padding: 20px;
+}
+
+.gallery .pics {
     -webkit-transition: all 350ms ease;
-    transition: all 350ms ease; }
-    .gallery .animation {
-    -webkit-transform: scale(1);
-    -ms-transform: scale(1);
-    transform: scale(1); }
+    transition: all 350ms ease;
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.gallery .pics img {
+    transition: transform 0.5s ease;
+    width: 100%;
+    height: auto;
+}
+
+.gallery .pics:hover img {
+    transform: scale(1.08);
+}
     
-    @media (max-width: 450px) {
+@media (max-width: 768px) {
     .gallery {
-    -webkit-column-count: 1;
-    -moz-column-count: 1;
-    column-count: 1;
-    -webkit-column-width: 100%;
-    -moz-column-width: 100%;
-    column-width: 100%;
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
     }
+}
+    
+@media (max-width: 450px) {
+    .gallery {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+        -webkit-column-width: 100%;
+        -moz-column-width: 100%;
+        column-width: 100%;
     }
+}
     
     @media (max-width: 400px) {
     .btn.filter {
